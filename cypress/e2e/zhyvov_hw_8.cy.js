@@ -6,5 +6,5 @@ it('Order via hw helper function', () => {
     cy.get('#filter_keyword').type('I');
     cy.get('.fa.fa-search').click();
 
-    findProduct('NAIL LACQUER 1');
+    findProduct('nail LaCquer 1');
 })

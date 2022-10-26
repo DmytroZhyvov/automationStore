@@ -20,8 +20,11 @@ export function login() {
 }
 
 export function findProduct(productName) {
+    productName = productName.toUpperCase();
+
     cy.get('.thumbnails.grid').find('.prdocutname[title]')
-        .then($arr => {
+        .then(
+            $arr => {
             const texts = [...$arr].map(el => el.innerText);
 
             if (texts.indexOf(productName) !== -1) {
@@ -34,13 +37,15 @@ export function findProduct(productName) {
                 cy.get('section.mb40').should('contain.text','Thank you for shopping with us!');
 
                 } else {
-
                     cy.get('body').then($body => {
-                        if ($body.find('.pagination li a').length > 0) {
-                            cy.get('.pagination li a').contains('>').click()
+                        if ($body.find('.pagination li a:contains(">>")').length > 0) {
+                            cy.log('Check')
+                            cy.get('.pagination li a:contains(">")').first().click();
+                        } else {
+                            return cy.log('Product not found');
                         }
+                            findProduct(productName);
                     })
-                    findProduct(productName)
                 }
             })
-        }
+}
