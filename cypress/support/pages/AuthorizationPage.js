@@ -1,4 +1,4 @@
-import BasePage from "./BasePage";
+import BasePage from './BasePage';
 
 class AuthorizationPage extends BasePage{
     visit(){
@@ -20,7 +20,7 @@ class AuthorizationPage extends BasePage{
 
     typeTextInLoginField(userName) {
         cy.log(`Type username ${userName} in login field`);
-        this.getLoginButton().type(userName);
+        this.getLoginField().type(userName);
     }
 
     typeTextInPasswordField(password) {
@@ -36,6 +36,16 @@ class AuthorizationPage extends BasePage{
         cy.log(`Click login button`);
         this.getLoginButton().click();
     }
+
+    getLoginAlert(){
+        cy.log('Display a login alert');
+        return cy.get('.alert');
+    }
+
+    getContinueButton(){
+        return cy.get("[title='Continue']");
+    }
+
 }
 
 export default new AuthorizationPage();
