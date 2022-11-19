@@ -2,7 +2,7 @@ const { defineConfig } = require("cypress");
 
 module.exports = defineConfig({
   viewportHeight: 1080,
-  videoWidth: 1920,
+  viewportWidth: 1920,
   e2e: {
     baseUrl: 'https://automationteststore.com',
     setupNodeEvents(on, config) {
