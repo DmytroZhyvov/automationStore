@@ -1,6 +1,19 @@
 {
   "devDependencies": {
+    "@faker-js/faker": "^7.5.0",
     "cypress": "^10.9.0",
-    "@faker-js/faker": "^7.5.0"
+    "cypress-multi-reporters": "^1.6.1",
+    "junit-report-merger": "^4.0.0",
+    "mocha-junit-reporter": "^2.2.0",
+    "mochawesome": "^7.1.3",
+    "mochawesome-merge": "^4.2.1",
+    "mochawesome-report-generator": "^6.2.0"
+  },
+  "scripts": {
+    "delete:reports": "rm cypress/results/* mochawesome-report/*.html mochawesome.json || true",
+    "combine:reports": "npx mochawesome-merge \"cypress/results/*.json\" > mochawesome.json",
+    "prereport": "npm run delete:reports",
+    "report": "cypress run --reporter mochawesome --reporter-options reportDir=\"cypress/results\",overwrite=false,html=false,json=true",
+    "postreport": "marge mochawesome.json"
   }
 }
