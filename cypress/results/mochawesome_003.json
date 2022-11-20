@@ -1,0 +1,86 @@
+{
+  "stats": {
+    "suites": 0,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2022-11-20T10:11:35.002Z",
+    "end": "2022-11-20T10:11:43.960Z",
+    "duration": 8958,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "a6703454-da3f-49aa-9bbe-50fbdbec6d52",
+      "title": "",
+      "fullFile": "cypress/e2e/zhyvov_hw_8.cy.js",
+      "file": "cypress/e2e/zhyvov_hw_8.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [
+        {
+          "title": "Order via hw helper function",
+          "fullTitle": "Order via hw helper function",
+          "timedOut": null,
+          "duration": 8875,
+          "state": "passed",
+          "speed": "medium",
+          "pass": true,
+          "fail": false,
+          "pending": false,
+          "context": null,
+          "code": "(0, _helper.login)();\ncy.get('#filter_keyword').type('I');\ncy.get('.fa.fa-search').click();\n(0, _helper.findProduct)('nail LaCquer 1');",
+          "err": {},
+          "uuid": "33806dad-0d3e-4a2c-b098-fd7d081db137",
+          "parentUUID": "a6703454-da3f-49aa-9bbe-50fbdbec6d52",
+          "isHook": false,
+          "skipped": false
+        }
+      ],
+      "suites": [],
+      "passes": [
+        "33806dad-0d3e-4a2c-b098-fd7d081db137"
+      ],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 8875,
+      "root": true,
+      "rootEmpty": false,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/results",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
