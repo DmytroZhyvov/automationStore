@@ -4,6 +4,11 @@ pipeline {
     tools: {nodejs 'NodeJS'}
 
     stages {
+        stage('Install dependencies') {
+                steps {
+                    sh 'npm install'
+                }
+            }
         stage('Cypress run') {
             steps {
                 sh 'npm run allure:clear'
